@@ -7,7 +7,7 @@ OUTDIR=vendor/$VENDOR/$DEVICE
 OUTCOMMON=vendor/$VENDOR/$COMMON
 
 (cat << EOF) > ../../../$OUTDIR/$DEVICE-vendor-blobs.mk
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright (C) 2012 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,13 +27,17 @@ PRODUCT_COPY_FILES += \\
 EOF
 
 LINEEND=" \\"
+COUNT=`cat proprietary-files.txt | grep -v ^# | grep -v ^$ | wc -l | awk {'print $1'}`
 for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
+    COUNT=`expr $COUNT - 1`
+    if [ $COUNT = "0" ]; then
+        LINEEND=""
+    fi
     echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> ../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 done
-echo "    $OUTDIR/proprietary/modem.bin:modem.bin" >> ../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
 (cat << EOF) > ../../../$OUTDIR/$DEVICE-vendor.mk
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -60,7 +64,7 @@ PRODUCT_COPY_FILES := \\
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
 # Pick up overlay for features that depend on non-open-source files
-DEVICE_PACKAGE_OVERLAYS := vendor/$VENDOR/aries-common/overlay
+DEVICE_PACKAGE_OVERLAYS := vendor/$VENDOR/galaxys4gmtd/overlay
 
 \$(call inherit-product, $OUTDIR/$DEVICE-vendor-blobs.mk)
 \$(call inherit-product, $OUTCOMMON/aries-vendor-blobs.mk)
@@ -68,7 +72,7 @@ EOF
 
 
 (cat << EOF) > ../../../$OUTDIR/BoardConfigVendor.mk
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -93,4 +97,3 @@ BOARD_USES_LIBSECRIL_STUB := false
 BOARD_NO_PAGE_FLIPPING := false
 BOARD_NO_32BPP := false
 EOF
-

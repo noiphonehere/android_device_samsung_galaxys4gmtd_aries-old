@@ -4,9 +4,6 @@ vendor/bin/gpsd
 vendor/lib/libsamsung_hwlegacy.so
 lib/libclientgps.so
 
-# GLES
-lib/egl/libGLES_android.so 
-
 # RIL
 lib/libril.so
 lib/libsecril-client.so

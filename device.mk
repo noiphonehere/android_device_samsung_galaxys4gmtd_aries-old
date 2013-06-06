@@ -63,7 +63,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/aries-common/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
 	device/samsung/aries-common/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
 
-# No ASLR
+# NOALSR
 PRODUCT_PACKAGES := \
 	noaslr
 

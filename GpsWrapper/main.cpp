@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "SGS4G-G
-pS"
+#define LOG_TAG "SGS4G-GPS"
 
 #include <stdio.h>
 #include <unistd.h>
@@ -33,7 +32,9 @@ int main() {
     }
 
     ALOGD("Starting vendor gpsd");
-    execv(GPSD_PATH, GSPSD_PATH, (char *) 0);
+    execl(GPSD_PATH, GPSD_PATH, (char *) 0);
+
+    // If we made it here, it failed (since exec replaces the running app).
     ALOGE("Failed to start gpsd!");
 
     return 1;

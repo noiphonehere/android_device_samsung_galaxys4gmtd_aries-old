@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
 	AriesParts \
 	tvouthack
 	
+# GPS Wrapper
+PRODUCT_PACKAGES += \
+	gpsd
+
 # Charger
 PRODUCT_PACKAGES += \
 	charger \

@@ -1,5 +1,6 @@
 # GPS
-vendor/etc/gps.conf
+etc/gps.conf
+vendor/etc/gps.xml
 vendor/bin/gpsd
 vendor/lib/hw/gps.aries.so
 lib/libclientgps.so

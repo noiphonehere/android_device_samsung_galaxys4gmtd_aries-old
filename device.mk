@@ -38,34 +38,35 @@
 # These is the hardware-specific overlay, which points to the location
 # of hardware-specific resource overrides, typically the frameworks and
 # application settings that are stored in resourced.
-DEVICE_PACKAGE_OVERLAYS := device/samsung/galaxys4gmtd/overlay
+DEVICE_PACKAGE_OVERLAYS := device/samsung/galaxys4gmtd/overlay \
+		device/samsung/aries-common/overlay
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
-	device/samsung/galaxys4gmtd/vold.fstab:system/etc/vold.fstab \
-	device/samsung/galaxys4gmtd/asound.conf:system/etc/asound.conf \
+	device/samsung/galaxys4gmtd/rdisk/vold.fstab:system/etc/vold.fstab \
+	device/samsung/galaxys4gmtd/sound/asound.conf:system/etc/asound.conf \
 	device/samsung/aries-common/egl.cfg:system/lib/egl/egl.cfg \
 	device/samsung/aries-common/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxys4gmtd/init.aries.rc:root/init.aries.rc \
-	device/samsung/galaxys4gmtd/init.aries.gps.rc:root/init.aries.gps.rc \
-	device/samsung/galaxys4gmtd/init.aries.usb.rc:root/init.aries.usb.rc \
-	device/samsung/galaxys4gmtd/init.aries.usb.rc:recovery/root/usb.rc \
-	device/samsung/galaxys4gmtd/lpm.rc:root/lpm.rc \
-	device/samsung/galaxys4gmtd/ueventd.aries.rc:root/ueventd.aries.rc
+	device/samsung/galaxys4gmtd/rdisk/init.aries.rc:root/init.aries.rc \
+	device/samsung/galaxys4gmtd/rdisk/init.aries.gps.rc:root/init.aries.gps.rc \
+	device/samsung/galaxys4gmtd/rdisk/init.aries.usb.rc:root/init.aries.usb.rc \
+	device/samsung/galaxys4gmtd/rdisk/init.aries.usb.rc:recovery/root/usb.rc \
+	device/samsung/galaxys4gmtd/rdisk/lpm.rc:root/lpm.rc \
+	device/samsung/galaxys4gmtd/rdisk/ueventd.aries.rc:root/ueventd.aries.rc
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxys4gmtd/aries-keypad.kl:system/usr/keylayout/aries-keypad.kl \
+	device/samsung/galaxys4gmtd/prebuilt/key/aries-keypad.kl:system/usr/keylayout/aries-keypad.kl \
 	device/samsung/aries-common/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
 	device/samsung/aries-common/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
 	device/samsung/aries-common/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
 
-# GPS
+# NOALSR
 PRODUCT_PACKAGES := \
-	gps.aries
+	noaslr
 
 # Generated kcm keymaps
 PRODUCT_PACKAGES := \
@@ -127,7 +128,11 @@ PRODUCT_PACKAGES += \
 	AriesParts \
 	tvouthack
 	
-# CHarger
+# GPS Wrapper
+PRODUCT_PACKAGES += \
+	gpsd
+
+# Charger
 PRODUCT_PACKAGES += \
 	charger \
 	charger_res_images

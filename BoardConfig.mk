@@ -35,10 +35,9 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_PROVIDES_INIT := true
 TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOOTLOADER_BOARD_NAME := aries
-TARGET_RECOVERY_INITRC := device/samsung/galaxys4gmtd/recovery.rc
+TARGET_RECOVERY_INITRC := device/samsung/galaxys4gmtd/rdisk/recovery.rc
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
-BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # Kernel Config
 TARGET_KERNEL_CONFIG := cyanogenmod_galaxys4gmtd_defconfig
@@ -116,6 +115,10 @@ USE_OPENGL_RENDERER := true
 TARGET_DISABLE_TRIPLE_BUFFERING := false
 
 BOARD_ALLOW_EGL_HIBERNATION := true
+
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 
 # hwcomposer: custom vsync ioctl
 BOARD_CUSTOM_VSYNC_IOCTL := true

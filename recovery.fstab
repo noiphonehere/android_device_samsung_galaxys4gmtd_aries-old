@@ -8,7 +8,5 @@
 /cache		yaffs2		cache
 /data		yaffs2		userdata
 
-/sdcard		vfat		/dev/block/mmcblk0p1
-
-# no sd-ext for now. Maybe we'll move /data here later.
-#/sd-ext		ext4		/dev/block/mmcblk0p2
+/sdcard		vfat		/dev/block/mmcblk0p1    lun=/sys/devices/platform/s3c-usbgadget/gadget/lun0/file
+/sd-ext		ext4		/dev/block/mmcblk0p2

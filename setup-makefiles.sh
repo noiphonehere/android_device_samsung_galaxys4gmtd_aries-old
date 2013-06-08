@@ -67,6 +67,7 @@ PRODUCT_COPY_FILES := \\
 DEVICE_PACKAGE_OVERLAYS := vendor/$VENDOR/galaxys4gmtd/overlay
 
 \$(call inherit-product, $OUTDIR/$DEVICE-vendor-blobs.mk)
+\$(call inherit-product, $OUTCOMMON/aries-vendor-blobs.mk)
 EOF
 
 

@@ -9,6 +9,7 @@ service gpsd /system/vendor/bin/gpsd
     class late_start
     user root
     group system inet
+    oneshot
 
 on post-fs-data
     mkdir /data/gps 775 gps system

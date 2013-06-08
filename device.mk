@@ -65,8 +65,8 @@ PRODUCT_COPY_FILES += \
 	device/samsung/aries-common/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
 
 # NOALSR
-PRODUCT_PACKAGES := \
-	noaslr
+#PRODUCT_PACKAGES := \
+#	noaslr
 
 # Generated kcm keymaps
 PRODUCT_PACKAGES := \
@@ -129,8 +129,8 @@ PRODUCT_PACKAGES += \
 	tvouthack
 	
 # GPS Wrapper
-PRODUCT_PACKAGES += \
-	gpsd
+#PRODUCT_PACKAGES += \
+#	gpsd
 
 # Charger
 PRODUCT_PACKAGES += \

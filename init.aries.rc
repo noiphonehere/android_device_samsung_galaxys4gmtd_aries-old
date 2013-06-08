@@ -66,7 +66,7 @@ on fs
     chmod 660 /sys/class/sec/uart_switch/UART_SEL/value
 
 # load wifi modules
-	insmode /system/lib/modules/bcmdhd.ko
+	insmod /system/lib/modules/bcmdhd.ko
 
 on post-fs
     # We chown/chmod /data again so because mount is run as root + defaults

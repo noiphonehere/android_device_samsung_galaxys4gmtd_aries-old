@@ -110,7 +110,7 @@ service aries-ril-daemon /system/bin/rild
     socket rild-debug stream 660 radio system
     user root
     group radio cache inet misc audio log
-    disabled
+#    disabled
 
 # 3D init
 service pvrsrvinit /system/vendor/bin/pvrsrvinit

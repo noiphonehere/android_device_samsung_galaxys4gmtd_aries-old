@@ -48,5 +48,8 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys4gmtd/shbootimg.mk
 
 TARGET_OTA_ASSERT_DEVICE := aries,galaxys4g,galaxys4gmtd,SGH-T959V,SGH-T959W
 
+# Camera
+TARGET_PROVIDES_LIBCAMERA := true
+
 # Import the aries-common BoardConfigCommon.mk
 include device/samsung/aries-common/BoardConfigCommon.mk

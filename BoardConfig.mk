@@ -35,12 +35,6 @@ BOARD_V4L2_DEVICE := /dev/video1
 BOARD_CAMERA_DEVICE := /dev/video0
 BOARD_SECOND_CAMERA_DEVICE := /dev/video2
 
-# fix this up by examining /proc/mtd on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 419430400
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 555745280
-BOARD_FLASH_BLOCK_SIZE := 4096
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/galaxys4gmtd/bdroid
 
@@ -53,3 +47,9 @@ TARGET_PROVIDES_LIBCAMERA := true
 
 # Import the aries-common BoardConfigCommon.mk
 include device/samsung/aries-common/BoardConfigCommon.mk
+
+# fix this up by examining /proc/mtd on a running device
+BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 419430400
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 555745280
+BOARD_FLASH_BLOCK_SIZE := 4096

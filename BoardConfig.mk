@@ -54,3 +54,11 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 419430400
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 555745280
 BOARD_FLASH_BLOCK_SIZE := 4096
+
+# TWRP options
+DEVICE_RESOLUTION := 480x800
+TW_NO_REBOOT_BOOTLOADER := true
+TW_FLASH_FROM_STORAGE := true
+# Leave this as false for now, we can attempt to enable it later when we
+# make sure that the ramdisk can be injected to
+TW_INCLUDE_INJECTTWRP := false

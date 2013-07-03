@@ -116,7 +116,8 @@ PRODUCT_COPY_FILES += \
 # Libs
 PRODUCT_PACKAGES += \
 	libstagefrighthw \
-	libcamera
+	libcamera \
+	gps.aries
 
 # Bluetooth MAC Address
 PRODUCT_PACKAGES += \

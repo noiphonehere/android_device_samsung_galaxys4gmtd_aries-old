@@ -156,7 +156,7 @@ service bdaddr /system/bin/bdaddr_read
     disabled
     oneshot
 
-on property:il.bt_macaddr=*
+on property:ril.bt_macaddr=*
     start bdaddr
 
 on property:init.svc.bootanim=running
